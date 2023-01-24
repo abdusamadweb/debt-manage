@@ -121,7 +121,7 @@ const Profile = () => {
                 <div className="profile__inner">
                     <h2 className="profile__title">Profile</h2>
                     <div className="profile__content content">
-                        <div className='content__head row align-center'>
+                        <div0 className='content__head row align-center'>
                             <div className='content__icon'>
                                 <i className="fa-solid fa-user-doctor icon" onClick={getImg}/>
                             </div>
@@ -129,9 +129,8 @@ const Profile = () => {
                                 <h3 className="content__title">{ me.data.fullName }</h3>
                                 <h4 className="content__pos">{ me.data.roleName }</h4>
                             </div>
-                        </div>
+                        </div0>00
                         <div>
-                            <img src={`https://185.217.131.200:8080/api/debt/v1/attachment/get/${file.data.id}`} alt="img"/>
                             <img src={`data:;base64,${img}`} alt="img"/>
                             <a className='content__tel' href={`tel:${me.phoneNumber}`}>{ me.error === false && formatPhone(me.data.phoneNumber) }</a>
                             <p className='content__desc'>Siz <span>"{ me.error === false && me.data.roleName.slice(5) }"</span> faqat qarz oldi berdi jarayonini boshqara olasiz.</p>
