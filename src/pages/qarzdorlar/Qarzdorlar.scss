@@ -1,0 +1,298 @@
+@use './src/scss' as *;
+
+.qarz {
+  min-height: 100vh;
+  flex: 1;
+  padding: 30px 0;
+
+  @include tablet {
+    margin-left: 60px;
+  }
+
+  &__titles {
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid #CBD5E1;
+  }
+
+  &__btn {
+    font-weight: 500;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: $main-color;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    .icon {
+      font-size: 14px;
+      margin-right: 6px;
+      color: #fff;
+    }
+
+    .txt {
+      font-size: 15px;
+      color: #fff;
+    }
+  }
+
+  .content {
+    width: 1600px;
+    padding: 20px 24px;
+    margin: 0 auto;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    border-radius: 20px;
+    background: #fff;
+
+    @include breakpoint-down(1970px) {
+      width: 1500px;
+    }
+    @include breakpoint-down(1870px) {
+      width: 1400px;
+    }
+    @include breakpoint-down(1770px) {
+      width: 1300px;
+    }
+    @include breakpoint-down(1670px) {
+      width: 1200px;
+    }
+    @include breakpoint-down(1570px) {
+      width: 1100px;
+    }
+    @include breakpoint-down(1470px) {
+      width: 1000px;
+    }
+    @include breakpoint-down(1370px) {
+      width: 900px;
+    }
+    @include breakpoint-down(1270px) {
+      width: 800px;
+    }
+    @include breakpoint-down(1170px) {
+      width: 700px;
+    }
+    @include breakpoint-down(1070px) {
+      width: 650px;
+    }
+    @include tablet {
+      max-width: 900px;
+      width: 100%;
+    }
+    @include mobile {
+      padding: 1rem;
+    }
+
+    &__info {
+      width: 1050px;
+
+      @include tablet {
+        width: 900px;
+      }
+    }
+
+    &__head {
+      margin-bottom: 1rem;
+    }
+
+    .form {
+      position: relative;
+      width: 440px;
+
+      @include breakpoint-down(1440px) {
+        width: 400px;
+      }
+
+      .icon {
+        position: absolute;
+        top: 30%;
+        left: 4%;
+        opacity: 0.7;
+        z-index: 5;
+      }
+
+      &__inp {
+        width: 380px;
+        height: 42px;
+        padding: 10px 10px 10px 45px;
+        border-radius: 12px;
+        border: 1px solid #eee;
+        color: $txt-color;
+        outline: none;
+        transition: border-color 0.3s ease;
+
+        @include breakpoint-down(1440px) {
+          width: 350px;
+        }
+
+        &:hover {
+          border-color: $main-color;
+        }
+        &:focus {
+          border-color: $main-color;
+        }
+
+        &::placeholder {
+          font-size: 15px;
+          opacity: 0.8;
+        }
+      }
+    }
+    &__date {
+      width: 200px;
+
+      @include tablet {
+        width: 160px;
+      }
+
+      span {
+        font-size: 14px;
+        padding: 8px 15px;
+        border-radius: 12px;
+        background: #EFF0F6;
+      }
+    }
+    
+    .observer {
+      width: 100%;
+      height: 1px;
+      background: transparent;
+    }
+
+    .load-btn {
+      display: block;
+      font-weight: 500;
+      padding: 10px 15px;
+      margin-top: 20px;
+      margin-right: 10px;
+      border-radius: 12px;
+      color: #fff;
+      background: #AD1FEA;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.75;
+      }
+
+      span {
+        margin-right: 10px;
+      }
+      .icon {
+        font-size: 14px;
+      }
+    }
+
+    .item {
+      flex-flow: nowrap;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #eee;
+      }
+
+      &__titles {
+        padding: 1.6rem 0;
+
+        &::before {
+          position: relative;
+          width: 18px;
+          height: 18px;
+          display: inline-block;
+          content: '';
+          border-radius: 50%;
+          border: 2px solid #B4B4BB;
+          background: #fff;
+          transition: border-color 0.3s ease;
+        }
+
+        &:hover.item__titles::before {
+          border-color: $main-color;
+        }
+        &:hover .item__title {
+          color: $main-color;
+        }
+      }
+
+      .inner {
+        width: 424px;
+
+        @include breakpoint-down(1440px) {
+          width: 380px;
+        }
+      }
+      .wrapper {
+        width: 364px;
+
+        @include breakpoint-down(1440px) {
+          width: 334px;
+        }
+      }
+      &__title {
+        font-weight: 600;
+        font-size: 16px;
+        text-transform: capitalize;
+        padding-left: 1rem;
+        color: $txt-color;
+        transition: color 0.3s ease;
+      }
+      &__job {
+        font-weight: 500;
+        color: $txt-color;
+      }
+
+      &__txt {
+        width: 200px;
+        padding-right: 10px;
+        color: $txt-color;
+
+        @include tablet {
+          width: 160px;
+        }
+
+        &.time {
+          letter-spacing: -0.3px;
+        }
+        &.money {
+          width: 140px;
+
+          span {
+            font-weight: 500;
+          }
+        }
+      }
+
+      &__icons {
+        gap: 10px;
+
+        @include breakpoint-down(930px) {
+          gap: 4px;
+        }
+
+        .btn {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          border-radius: 10px;
+          background: #F2F4FF;
+
+          &:hover .fa-pen {
+            color: #AD1FEA;
+          }
+          &:hover .fa-trash-can {
+            color: #D73737;
+          }
+        }
+
+        .icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: $txt-color;
+          transition: color 0.2s ease;
+        }
+      }
+    }
+  }
+}

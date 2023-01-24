@@ -1,0 +1,42 @@
+@use "scss/index" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: $font-family;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.App {
+  display: flex;
+  color: $txt-color;
+  background: $bg-color;
+  
+  @include tablet {
+    display: block;
+  }
+}
+
+.loading {
+  padding: 1rem;
+
+  &.error {
+    font-weight: 500;
+    color: #d10000;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 5px;
+  background-color: #e1e1e1;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #a1a1a1;
+
+  &:hover {
+    background: #8f8f8f;
+  }
+}

@@ -1,0 +1,84 @@
+@use './src/scss' as *;
+
+.sign {
+  width: 100%;
+  height: 100vh;
+  
+  &__imgs {
+    width: 45vw;
+    background: #C9AC8C;
+
+    @include tablet {
+      width: 50vw;
+    }
+    @include breakpoint-down(880px) {
+      display: none;
+    }
+  }
+  &__img {
+    height: 100%;
+    display: block;
+  }
+
+  .body {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+
+    &__title {
+      font-weight: 800;
+      font-size: 36px;
+      margin-bottom: 2rem;
+    }
+    
+    .form {
+      
+      & > * {
+        display: block;
+      }
+
+      &__label {
+        margin-bottom: 0.5rem;
+      }
+      
+      &__inp {
+        width: 350px;
+        height: 46px;
+        display: block;
+        padding: 0 20px;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+        border: 1px solid #B4B4BB;
+        outline: none;
+        transition: border-color 0.3s ease;
+
+        @include mobile {
+          width: 310px;
+        }
+
+        &::placeholder {
+          opacity: 0.7;
+        }
+
+        &:focus {
+          border-color: $main-color;
+        }
+      }
+
+      &__btn {
+        width: 100%;
+        height: 46px;
+        font-weight: 500;
+        font-size: 18px;
+        border-radius: 99px;
+        color: #fff;
+        background: $main-color;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.85;
+        }
+      }
+    }
+  }
+}

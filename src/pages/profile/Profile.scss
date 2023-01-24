@@ -1,0 +1,84 @@
+@use './src/scss' as *;
+
+.profile {
+  min-height: 100vh;
+  flex: 1;
+  padding: 30px 0;
+
+  @include tablet {
+    margin-left: 60px;
+  }
+
+  &__title {
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid #CBD5E1;
+  }
+
+  .content {
+    padding: 20px 24px;
+    border-radius: 20px;
+    background: #fff;
+
+    @include mobile {
+      padding: 1rem;
+    }
+
+    &__head {
+      margin-bottom: 2rem;
+    }
+    
+    &__icon {
+      position: relative;
+      width: 100px;
+      height: 110px;
+      margin-right: 1rem;
+      border-radius: 12px;
+      background: #EFF0F6;
+
+      @include breakpoint-down(400px) {
+        width: 80px;
+        height: 90px;
+      }
+
+      .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 44px;
+
+        @include breakpoint-down(400px) {
+          font-size: 34px;
+        }
+      }
+    }
+
+    &__title {
+      font-weight: 600;
+      text-transform: capitalize;
+      margin-bottom: 8px;
+    }
+    &__pos {
+      font-weight: 600;
+      opacity: 0.85;
+    }
+
+    &__tel {
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: $txt-color;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+
+    &__desc {
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+@use './src/scss' as *;
+
+.add-qarz {
+  min-height: 100vh;
+  flex: 1;
+  padding: 30px 0;
+
+  @include tablet {
+    margin-left: 60px;
+  }
+
+  &__title {
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid #CBD5E1;
+  }
+
+  .content {
+    padding: 20px 24px;
+    border-radius: 20px;
+    background: #fff;
+
+    @include mobile {
+      padding: 1rem;
+    }
+
+    &__title {
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+    
+    .form {
+
+      .wrapper {
+        @include breakpoint-down(800px) {
+          flex-flow: column;
+        }
+      }
+
+      .without {
+        .form__inp {
+          margin-right: 0 !important;
+        }
+      }
+      
+      &__label {
+        display: block;
+        margin-bottom: 8px;
+      }
+      &__inp {
+        width: 350px;
+        height: 42px;
+        padding: 10px;
+        margin: 0 2rem 1rem 0;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        color: $txt-color;
+        outline: none;
+        transition: border-color 0.3s ease;
+
+        @include breakpoint-down(1160px) {
+          width: 300px;
+        }
+        @include breakpoint-down(1052px) {
+          width: 280px;
+        }
+        @include tablet {
+          width: 300px;
+        }
+        @include breakpoint-down(800px) {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        &.second {
+          margin-right: 0;
+        }
+        &.text-area {
+          min-height: 125px;
+          resize: none;
+        }
+        &.last {
+          margin-bottom: 50px;
+        }
+
+        &:hover {
+          border-color: $main-color;
+        }
+        &:focus {
+          border-color: $main-color;
+        }
+
+        &::placeholder {
+          font-size: 15px;
+          opacity: 0.8;
+        }
+      }
+      
+      &__btn {
+        display: block;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 10px 1rem;
+        border-radius: 12px;
+        color: #fff;
+        background: #AD1FEA;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+@use '../../scss/index' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  padding: 30px 0;
+  border-radius: 0 20px 20px 0;
+  border: 1px solid #eff0f6;
+  background: #fff;
+  transition: width 0.2s ease;
+
+  &.d-none {
+    display: none;
+  }
+
+  &.open {
+    width: 280px;
+  }
+
+  @include tablet {
+    position: fixed;
+    width: 60px;
+    z-index: 10;
+  }
+
+  &__logo {
+    font-size: 32px;
+    letter-spacing: -1px;
+    margin-bottom: 2rem;
+    color: $txt-color;
+    transition: font-size 0.2s ease;
+
+    &.opa {
+      font-size: 32px;
+    }
+
+    @include tablet {
+      font-size: 1px;
+      visibility: hidden;
+    }
+  }
+
+  .burger-menu {
+    position: absolute;
+    top: 3%;
+    left: 15px;
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    .icon {
+      font-size: 28px;
+      color: $txt-color;
+      transition: left 0.3s ease;
+
+      @include mobile {
+        font-size: 24px;
+      }
+
+      &.fa-xmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 32px;
+
+        @include mobile {
+          font-size: 28px;
+        }
+      }
+
+      &.left {
+        top: 12px;
+        left: 220px;
+      }
+    }
+  }
+
+  .nav {
+    @include tablet {
+      visibility: hidden;
+    }
+
+    &__list {
+      display: flex;
+      flex-flow: column;
+      gap: 8px;
+    }
+    &__link {
+      width: 100%;
+      font-weight: 600;
+      padding: 12px 15px;
+      border-radius: 10px;
+      color: $txt-color;
+      transition: color 0.3s ease,
+      background-color 0.3s ease;
+
+      &:hover {
+        background: #F7F9FD;
+      }
+      &:hover .icon {
+        transform: translateX(8px);
+      }
+
+      &:focus {
+        color: $main-color;
+      }
+
+      &.active {
+        color: $main-color;
+        background: #F2F4FF;
+      }
+
+      .icon {
+        right: 8px;
+        font-size: 14px;
+        transition: transform 0.5s ease;
+      }
+    }
+  }
+
+  .close {
+    visibility: hidden;
+  }
+  .open {
+    visibility: visible;
+  }
+
+}
