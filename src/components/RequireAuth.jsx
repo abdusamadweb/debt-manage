@@ -17,11 +17,11 @@ const RequireAuth = () => {
     console.log(decoded)
 
     return (
-        token !== false && decoded.role_name === 'ROLE_DIRECTOR' ? <Outlet />
-            : token && decoded.role_name === 'ROLE_ADMIN' ? <Profile />
-                : token && decoded.role_name === 'ROLE_MANAGER' ? <Home />
-                    : <Navigate from='/' to='/sign-in' state={{from: location}} replace />
-        // auth ? <Outlet /> : <Navigate to='/sign-in' />
+        // token !== false && decoded.role_name === 'ROLE_DIRECTOR' ? <Outlet />
+        //     : token && decoded.role_name === 'ROLE_ADMIN' ? <Profile />
+        //         : token && decoded.role_name === 'ROLE_MANAGER' ? <Home />
+        //             : <Navigate from='/' to='/sign-in' state={{from: location}} replace />
+        auth?.username ? <Outlet /> : <Navigate to='/sign-in' />
     );
 }
 
