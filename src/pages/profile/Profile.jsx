@@ -131,7 +131,7 @@ const Profile = () => {
                             </div>
                         </div>
                         <div>
-                            <img src={`http://185.217.131.200:8080/api/debt/v1/attachment/get/${file.data.id}`} alt="img"/>
+                            <img src={`https://185.217.131.200:8080/api/debt/v1/attachment/get/${file.data.id}`} alt="img"/>
                             <img src={`data:;base64,${img}`} alt="img"/>
                             <a className='content__tel' href={`tel:${me.phoneNumber}`}>{ me.error === false && formatPhone(me.data.phoneNumber) }</a>
                             <p className='content__desc'>Siz <span>"{ me.error === false && me.data.roleName.slice(5) }"</span> faqat qarz oldi berdi jarayonini boshqara olasiz.</p>
