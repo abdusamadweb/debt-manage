@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const SignIn = () => {
 
-    const { setAuth, auth } = useAuth()
+    const { setAuth } = useAuth()
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -18,7 +18,6 @@ const SignIn = () => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    console.log(auth)
 
     async function signIn(e) {
         e.preventDefault()
@@ -35,10 +34,7 @@ const SignIn = () => {
             const accessToken = response.data.data.accessToken;
             setAuth({ username, password, accessToken })
             localStorage.setItem("token", accessToken)
-            localStorage.setItem("auth", auth)
-
             navigate(from, { replace: true });
-            console.log(response.data)
         } catch (err) {
             if (!err?.response) {
                 toast.error('No Server Response', {

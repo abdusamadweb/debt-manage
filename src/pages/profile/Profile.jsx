@@ -43,11 +43,8 @@ const Profile = () => {
     function formatPhone(str) {
         const mask = '+### (##) ###-##-##'
         if (!mask) return str;
-
         const numeric = str.replaceAll(/[^\d]/g, '');
-
         let idx = 0;
-
         const formated = mask.split('').map(el => {
             if (el === '#') {
                 el = numeric[idx];
@@ -55,7 +52,6 @@ const Profile = () => {
             }
             return el;
         });
-
         return formated.join('');
     }
 
@@ -81,15 +77,15 @@ const Profile = () => {
                     error: false
                 })
             })
-            .catch(function (err) {
+            .catch(function () {
                 setFile({
                     data: null,
                     error: true
                 })
             })
     }
-    console.log(file)
 
+    // get Image
     function getImg() {
         $api
             .get(`/api/debt/v1/attachment/get/${file.data.id}`, {
@@ -103,8 +99,8 @@ const Profile = () => {
                 console.log(res.data)
                 const base64 = btoa(
                     new Uint8Array(res.data).reduce(
-                      (data, byte) => data + String.fromCharCode(byte),
-                      ''
+                        (data, byte) => data + String.fromCharCode(byte),
+                        ''
                     )
                 )
                 setImg(base64)
@@ -113,7 +109,7 @@ const Profile = () => {
                 console.log(err)
             })
     }
-    
+
 
     return (
         <div className='profile'>
